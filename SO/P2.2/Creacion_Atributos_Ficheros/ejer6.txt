@@ -1,0 +1,44 @@
+/**     PRACTICA 2.2
+ * CREACIÓN Y ATRIBUTOS DE FICHEROS - EJERCICIO 6
+ *      Cuando se crea un fichero, los permisos por defecto se derivan de la máscara de usuario (umask). 
+ *      El comando interno de la shell umask permite consultar y fijar esta máscara. Usando este comando, 
+ *      fijar la máscara de forma que los nuevos ficheros no tengan permiso de escritura para el grupo y no tengan ningún permiso para otros. 
+ *      Comprobar el funcionamiento con touch(1), mkdir(1) y ls(1).
+ *
+ *      El comando umask quita permisos, por lo tanto para que los nuevos ficheros 
+ *      tengan los permisos rwxr-x---:
+ *          umask 027 //----w-rwx
+**/
+
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ umask 0022                                                                                                           
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ umask                                                                                                                
+0022                                                                                                                                                                        
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ umask 027                                                                                                            
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ umask                                                                                                                
+0027                                                                                                                                                                        
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ mkdir Ejer6                                                                                                          
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l                                                                                                                
+total 40                                                                                                                                                                    
+drwxr-x--- 2 sansan sansan 4096 Nov 21 10:41 Ejer6                                                                                                                          
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 5257 Nov 21 09:41 ejer3.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2173 Nov 21 09:54 ejer4.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 1071 Nov 21 10:24 ejer5.c                                                                                                                        
+-rw-r--r-- 1 sansan sansan  636 Nov 21 10:34 ejer6.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 1482 Nov 21 10:33 ejer7.c                                                                                                                        
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ cd Ejer6
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros/Ejer6$
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ touch ejer6b.txt                                                                                                     
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l                                                                                                                
+total 40                                                                                                                                                                    
+drwxr-x--- 2 sansan sansan 4096 Nov 21 10:41 Ejer6                                                                                                                          
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 5257 Nov 21 09:41 ejer3.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2173 Nov 21 09:54 ejer4.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 1071 Nov 21 10:24 ejer5.c                                                                                                                        
+-rw-r--r-- 1 sansan sansan 3730 Nov 21 10:44 ejer6.txt                                                                                                                      
+-rw-r----- 1 sansan sansan    0 Nov 21 10:45 ejer6b.txt                                                                                                                     
+-rw-r--r-- 1 sansan sansan 1482 Nov 21 10:33 ejer7.c                                                                                                                        
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$

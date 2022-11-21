@@ -1,0 +1,43 @@
+/**     PRACTICA 2.2
+ * CREACIÓN Y ATRIBUTOS DE FICHEROS - EJERCICIO 3
+ *      Los permisos se pueden otorgar de forma selectiva usando la notación octal o la simbólica. 
+ *      Ejemplo, probar las siguientes órdenes (equivalentes):
+ *          ● chmod 540 ejer3.txt
+ *          ● chmod u=rx,g=r,o= ejer3.txt
+ *       ¿Cómo se podrían fijar los permisos rw-r--r-x, de las dos formas? 
+ *       Consultar la página de manual chmod(1) para ver otras formas de fijar los permisos (p.ej. los operadores + y -).
+ *
+ *      Calculadora de permisos: https://chmod-calculator.com/
+**/
+
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l                                                                                                                
+total 16                                                                                                                                                                    
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan  527 Nov 21 09:32 ejer3.txt                                                                                                                      
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ chmod 540 ejer3.txt                                                                                                  
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l                                                                                                                
+total 16                                                                                                                                                                    
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt                                                                                                                      
+-r-xr----- 1 sansan sansan  527 Nov 21 09:32 ejer3.txt                                                                                                                      
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ chmod u=rx,g=r,o= ejer3.txt                                                                                          
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l                                                                                                                
+total 16                                                                                                                                                                    
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt                                                                                                                      
+-r-xr----- 1 sansan sansan  527 Nov 21 09:32 ejer3.txt
+
+
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ chmod 645 ejer3.txt                                                                                                  
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l                                                                                                                
+total 16                                                                                                                                                                    
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt                                                                                                                      
+-rw-r--r-x 1 sansan sansan  527 Nov 21 09:32 ejer3.txt
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ chmod u=rw,g=r,o=rx ejer3.txt                                                                                        
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l                                                                                                                
+total 20                                                                                                                                                                    
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt                                                                                                                      
+-rw-r--r-x 1 sansan sansan 4337 Nov 21 09:39 ejer3.txt 

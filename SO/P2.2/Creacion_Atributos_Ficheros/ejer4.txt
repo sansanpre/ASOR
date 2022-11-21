@@ -1,0 +1,24 @@
+/**     PRACTICA 2.2
+ * CREACIÓN Y ATRIBUTOS DE FICHEROS - EJERCICIO 4
+ *      Crear un directorio y quitar los permisos de ejecución para usuario, grupo y otros. 
+ *      Intentar cambiar al directorio. 
+**/
+
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ mkdir ejer4                                                                                                          
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls                                                                                                                   
+ejer1.txt  ejer2.txt  ejer3.txt  ejer4  ejer4.txt                                                                                                                           
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ chmod 000 ejer4                                                                                                      
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l                                                                                                                
+total 28                                                                                                                                                                    
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt                                                                                                                      
+-rw-r--r-- 1 sansan sansan 5257 Nov 21 09:41 ejer3.txt                                                                                                                      
+d--------- 2 sansan sansan 4096 Nov 21 09:44 ejer4                                                                                                                          
+-rw-r--r-- 1 sansan sansan  214 Nov 21 09:43 ejer4.txt
+
+
+/**
+ * Desde el sistema de ficheros no podemos acceder ni eliminar el directorio
+ * En el pdf de la practica podemos observar un mensaje de error (no tenemos permisos)
+ *
+**/

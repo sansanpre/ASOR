@@ -1,0 +1,20 @@
+/**     PRACTICA 2.2
+ * CREACIÓN Y ATRIBUTOS DE FICHEROS - EJERCICIO 2
+ *      El modo de un fichero es <tipo><rwx_propietario><rwx_grupo><rwx_resto>:
+ *          ● tipo: - fichero ordinario; d directorio; l enlace; c dispositivo carácter; b dispositivo bloque; p FIFO; s socket
+ *          ● rwx: r lectura (4); w escritura (2); x ejecución (1)
+ *      Comprobar los permisos de algunos directorios (con ls -ld). 
+**/
+
+sansan@MSI:~$ ls -lda                                                                                                                                                       
+drwxr-xr-x 14 sansan sansan 4096 Nov 19 11:39 .                                                                                                                             
+sansan@MSI:~$ cd ASOR                                                                                                                                                       
+sansan@MSI:~/ASOR$ ls -ld                                                                                                                                                   
+drwxr-xr-x 4 sansan sansan 4096 Nov  7 09:41 .                                                                                                                              
+sansan@MSI:~/ASOR$ cd SO                                                                                                                                                    
+sansan@MSI:~/ASOR/SO$ ls -ld                                                                                                                                                
+drwxr-xr-x 4 sansan sansan 4096 Nov 21 09:14 .                                                                                                                              
+sansan@MSI:~/ASOR/SO$ cd P2.2                                                                                                                                               
+sansan@MSI:~/ASOR/SO/P2.2$ ls -ld                                                                                                                                           
+drwxr-xr-x 6 sansan sansan 4096 Nov 21 09:17 .
+
