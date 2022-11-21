@@ -1,0 +1,17 @@
+/**     PRACTICA 2.2
+ * CREACIÓN Y ATRIBUTOS DE FICHEROS - EJERCICIO 10
+ *  Los enlaces se crean con ln(1):
+ *      ● Con la opción -s, se crea un enlace simbólico. 
+ *          Crear un enlace simbólico a un fichero ordinario y otro a un directorio. 
+ *          Comprobar el resultado con ls -l y ls -i. Determinar el inodo de cada fichero.
+ *      ● Repetir el apartado anterior con enlaces rígidos. 
+ *          Determinar los inodos de los ficheros y las propiedades con stat (observar el atributo número de enlaces). 
+ *      ● ¿Qué sucede cuando se borra uno de los enlaces rígidos? 
+ *          ¿Qué sucede si se borra uno de los enlaces simbólicos? ¿Y si se borra el fichero original?
+ *       
+**/
+
+
+
+
+
