@@ -1,0 +1,32 @@
+/**     PRACTICA 2.2
+ * CERROJOS DE FICHEROS - EJERCICIO 14
+ *  El estado y cerrojos de fichero en uso en el sistema se pueden consultar en el fichero /proc/locks. 
+  * Estudiar el contenido de este fichero.
+ *  
+**/
+
+sansan@MSI:~$ cat /proc/locks
+1: POSIX  ADVISORY  READ 12584 08:10:173469 128 128
+
+/**
+* Este archivo muestra los archivos bloqueados en la actualidad por el kernel. 
+* El contenido de este archivo contiene datos internos de depuración y puede variar enormemente, dependiendo del uso del sistema.
+*
+* A cada bloqueo se le asigna un único número al inicio de cada línea. 
+* La segunda columna se refiere a la clase de bloqueo utilizado; 
+*       FLOCK, haciendo referencia al estilo antiguo de bloqueos de archivos desde una llamada de sistema flock. 
+*       POSIX que representa los bloqueos nuevos POSIX desde la llamada de sistema lockf.
+
+* La tercera columna puede tener dos valores. 
+*       ADVISORY significa que el bloqueo no impide que otras personas puedan acceder a los datos; tan sólo previene de que otros intenten establecer un bloqueo. 
+*       MANDATORY significa que mientras que dura el bloqueo no se permite ningún otro acceso a los datos. 
+*
+* La cuarta columna muestra si el bloqueo permite al responsable del mismo acceso de READ o WRITE (lectura y escritura) al archivo. 
+*
+* La quinta muestra el ID del proceso que tiene el bloqueo. 
+*
+* La sexta columna muestra el ID del archivo bloqueado, en el formato de MAJOR-DEVICE:MINOR-DEVICE:INODE-NUMBER. 
+*
+* La séptima y octava columnas muestra el inicio y el final de la región bloqueada del archivo.
+*
+**/

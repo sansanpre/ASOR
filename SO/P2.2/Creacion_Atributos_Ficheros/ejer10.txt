@@ -11,7 +11,224 @@
  *       
 **/
 
+a)
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ln -s ej10 link_name
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ln -s ej10.txt name_link
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -li
+total 60
+173479 drwxr-xr-x 2 sansan sansan 4096 Nov 28 09:12 ej10
+173477 -rw-r--r-- 1 sansan sansan    0 Nov 28 09:11 ej10.txt
+186926 -rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt
+163902 -rw-r--r-- 1 sansan sansan  732 Nov 21 17:13 ejer10.txt
+186931 -rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt
+186937 -rw-r--r-- 1 sansan sansan 5257 Nov 21 09:41 ejer3.txt
+186951 -rw-r--r-- 1 sansan sansan 2173 Nov 21 09:54 ejer4.txt
+186956 -rw-r--r-- 1 sansan sansan 1071 Nov 21 10:24 ejer5.c
+159675 -rw-r--r-- 1 sansan sansan 5861 Nov 21 11:17 ejer6.txt
+186978 -rw-r--r-- 1 sansan sansan 1378 Nov 21 11:21 ejer7.c
+159677 -rw-r--r-- 1 sansan sansan 5731 Nov 21 11:35 ejer8.txt
+159684 -rw-r--r-- 1 sansan sansan 2747 Nov 21 17:12 ejer9.c
+173481 lrwxrwxrwx 1 sansan sansan    4 Nov 28 09:15 link_name -> ej10
+173482 lrwxrwxrwx 1 sansan sansan    8 Nov 28 09:15 name_link -> ej10.txt
+
+b)
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ln ej10.txt namelink
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ln ej10 linkname
+ln: ej10: hard link not allowed for directory
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -li
+total 60
+173479 drwxr-xr-x 2 sansan sansan 4096 Nov 28 09:12 ej10
+173477 -rw-r--r-- 2 sansan sansan    0 Nov 28 09:11 ej10.txt
+186926 -rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt
+163902 -rw-r--r-- 1 sansan sansan  732 Nov 21 17:13 ejer10.txt
+186931 -rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt
+186937 -rw-r--r-- 1 sansan sansan 5257 Nov 21 09:41 ejer3.txt
+186951 -rw-r--r-- 1 sansan sansan 2173 Nov 21 09:54 ejer4.txt
+186956 -rw-r--r-- 1 sansan sansan 1071 Nov 21 10:24 ejer5.c
+159675 -rw-r--r-- 1 sansan sansan 5861 Nov 21 11:17 ejer6.txt
+186978 -rw-r--r-- 1 sansan sansan 1378 Nov 21 11:21 ejer7.c
+159677 -rw-r--r-- 1 sansan sansan 5731 Nov 21 11:35 ejer8.txt
+159684 -rw-r--r-- 1 sansan sansan 2747 Nov 21 17:12 ejer9.c
+173481 lrwxrwxrwx 1 sansan sansan    4 Nov 28 09:15 link_name -> ej10
+173482 lrwxrwxrwx 1 sansan sansan    8 Nov 28 09:15 name_link -> ej10.txt
+173477 -rw-r--r-- 2 sansan sansan    0 Nov 28 09:11 namelink
+
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ stat -L namelink
+  File: namelink
+  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: 810h/2064d      Inode: 173477      Links: 2
+Access: (0644/-rw-r--r--)  Uid: ( 1000/  sansan)   Gid: ( 1000/  sansan)
+Access: 2022-11-28 09:11:58.424261688 +0100
+Modify: 2022-11-28 09:11:58.424261688 +0100
+Change: 2022-11-28 09:17:09.184257116 +0100
+ Birth: -
+
+/*No se pueden crear enlaces duros entre directorios 
+    ni entre ficheros de distintos sistemas de ficheros*/
+
+c) 
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ rm ej10.txt
+sansan@MSI:~/ASOR/SO/P2.2/Creacion_Atributos_Ficheros$ ls -l
+total 60
+drwxr-xr-x 2 sansan sansan 4096 Nov 28 09:12 ej10
+-rw-r--r-- 1 sansan sansan 7772 Nov 21 09:31 ejer1.txt
+-rw-r--r-- 1 sansan sansan  732 Nov 21 17:13 ejer10.txt
+-rw-r--r-- 1 sansan sansan 2205 Nov 21 09:30 ejer2.txt
+-rw-r--r-- 1 sansan sansan 5257 Nov 21 09:41 ejer3.txt
+-rw-r--r-- 1 sansan sansan 2173 Nov 21 09:54 ejer4.txt
+-rw-r--r-- 1 sansan sansan 1071 Nov 21 10:24 ejer5.c
+-rw-r--r-- 1 sansan sansan 5861 Nov 21 11:17 ejer6.txt
+-rw-r--r-- 1 sansan sansan 1378 Nov 21 11:21 ejer7.c
+-rw-r--r-- 1 sansan sansan 5731 Nov 21 11:35 ejer8.txt
+-rw-r--r-- 1 sansan sansan 2747 Nov 21 17:12 ejer9.c
+lrwxrwxrwx 1 sansan sansan    4 Nov 28 09:15 link_name -> ej10
+lrwxrwxrwx 1 sansan sansan    8 Nov 28 09:15 name_link -> ej10.txt  //Aparece en rojo porque no apunta a nada
+-rw-r--r-- 1 sansan sansan    0 Nov 28 09:11 namelink
 
 
+/* PÁGINA MANUAL ln(1)
 
+man7.org > Linux > man-pages
+
+Linux/UNIX system programming training
+
+ln(1) — Linux manual page
+NAME | SYNOPSIS | DESCRIPTION | AUTHOR | REPORTING BUGS | COPYRIGHT | SEE ALSO | COLOPHON
+
+
+ 
+LN(1)                         User Commands                        LN(1)
+NAME         top
+       ln - make links between files
+SYNOPSIS         top
+       ln [OPTION]... [-T] TARGET LINK_NAME
+       ln [OPTION]... TARGET
+       ln [OPTION]... TARGET... DIRECTORY
+       ln [OPTION]... -t DIRECTORY TARGET...
+DESCRIPTION         top
+       In the 1st form, create a link to TARGET with the name LINK_NAME.
+       In the 2nd form, create a link to TARGET in the current
+       directory.  In the 3rd and 4th forms, create links to each TARGET
+       in DIRECTORY.  Create hard links by default, symbolic links with
+       --symbolic.  By default, each destination (name of new link)
+       should not already exist.  When creating hard links, each TARGET
+       must exist.  Symbolic links can hold arbitrary text; if later
+       resolved, a relative link is interpreted in relation to its
+       parent directory.
+
+       Mandatory arguments to long options are mandatory for short
+       options too.
+
+       --backup[=CONTROL]
+              make a backup of each existing destination file
+
+       -b     like --backup but does not accept an argument
+
+       -d, -F, --directory
+              allow the superuser to attempt to hard link directories
+              (note: will probably fail due to system restrictions, even
+              for the superuser)
+
+       -f, --force
+              remove existing destination files
+
+       -i, --interactive
+              prompt whether to remove destinations
+
+       -L, --logical
+              dereference TARGETs that are symbolic links
+
+       -n, --no-dereference
+              treat LINK_NAME as a normal file if it is a symbolic link
+              to a directory
+
+       -P, --physical
+              make hard links directly to symbolic links
+
+       -r, --relative
+              create symbolic links relative to link location
+
+       -s, --symbolic
+              make symbolic links instead of hard links
+
+       -S, --suffix=SUFFIX
+              override the usual backup suffix
+
+       -t, --target-directory=DIRECTORY
+              specify the DIRECTORY in which to create the links
+
+       -T, --no-target-directory
+              treat LINK_NAME as a normal file always
+
+       -v, --verbose
+              print name of each linked file
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       The backup suffix is '~', unless set with --suffix or
+       SIMPLE_BACKUP_SUFFIX.  The version control method may be selected
+       via the --backup option or through the VERSION_CONTROL
+       environment variable.  Here are the values:
+
+       none, off
+              never make backups (even if --backup is given)
+
+       numbered, t
+              make numbered backups
+
+       existing, nil
+              numbered if numbered backups exist, simple otherwise
+
+       simple, never
+              always make simple backups
+
+       Using -s ignores -L and -P.  Otherwise, the last option specified
+       controls behavior when a TARGET is a symbolic link, defaulting to
+       -P.
+AUTHOR         top
+       Written by Mike Parker and David MacKenzie.
+REPORTING BUGS         top
+       GNU coreutils online help:
+       <https://www.gnu.org/software/coreutils/>
+       Report any translation bugs to
+       <https://translationproject.org/team/>
+COPYRIGHT         top
+       Copyright © 2020 Free Software Foundation, Inc.  License GPLv3+:
+       GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+       This is free software: you are free to change and redistribute
+       it.  There is NO WARRANTY, to the extent permitted by law.
+SEE ALSO         top
+       link(2), symlink(2)
+
+       Full documentation <https://www.gnu.org/software/coreutils/ln>
+       or available locally via: info '(coreutils) ln invocation'
+COLOPHON         top
+       This page is part of the coreutils (basic file, shell and text
+       manipulation utilities) project.  Information about the project
+       can be found at ⟨http://www.gnu.org/software/coreutils/⟩.  If you
+       have a bug report for this manual page, see
+       ⟨http://www.gnu.org/software/coreutils/⟩.  This page was obtained
+       from the tarball coreutils-8.32.tar.xz fetched from
+       ⟨http://ftp.gnu.org/gnu/coreutils/⟩ on 2021-08-27.  If you
+       discover any rendering problems in this HTML version of the page,
+       or you believe there is a better or more up-to-date source for
+       the page, or you have corrections or improvements to the
+       information in this COLOPHON (which is not part of the original
+       manual page), send a mail to man-pages@man7.org
+
+GNU coreutils 8.32             March 2020                          LN(1)
+Pages that refer to this page: dh_link(1),  pmlogmv(1),  update-alternatives(1),  link(2),  symlink(2),  hier(7),  symlink(7),  sln(8)
+
+HTML rendering created 2021-08-27 by Michael Kerrisk, author of The Linux Programming Interface, maintainer of the Linux man-pages project.
+
+For details of in-depth Linux/UNIX system programming training courses that I teach, look here.
+
+Hosting by jambit GmbH.
+
+Cover of TLPI
+
+*/
 
